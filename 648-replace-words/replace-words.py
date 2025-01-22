@@ -32,10 +32,8 @@ class Solution:
         for s in dictionary:
             insert(s)
         for idx,value in enumerate(l):
-            x = ord(value[0])-ord('a')
-            if  root.children[x]:
-                z = get(value)
-                l[idx]=(z if z!='' else value )
+            z = get(value)
+            l[idx]=(z if z!='' else value )
 
         return ' '.join(l)
             
