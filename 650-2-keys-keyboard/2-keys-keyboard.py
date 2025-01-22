@@ -4,7 +4,7 @@ class Solution:
         def recur(n,avail):
             if n==0:
                 return 0
-            if n<0 or avail>n_:
+            if n<0:
                 return INF
             best = INF
             # copy
