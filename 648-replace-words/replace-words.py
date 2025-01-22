@@ -3,7 +3,6 @@ class Solution:
         class Node:
             def __init__(self):
                 self.children=[None for _ in range(26)]
-                self.eow = False
                 self.w = None
         root = Node()
         def insert(s):
