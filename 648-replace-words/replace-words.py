@@ -28,7 +28,7 @@ class Solution:
                 curr = curr.children[x] 
             return ''
 
-        l = sentence.strip().split(' ')
+        l = sentence.split(' ')
         for s in dictionary:
             insert(s)
         for idx,value in enumerate(l):
