@@ -23,5 +23,4 @@ class Solution:
             idx-=1
             i+=1 
         res = int(''.join(map(str,s)))
-        print(res)
         return  res if len(t)!=x and res<=pow(2,31)-1 else -1
