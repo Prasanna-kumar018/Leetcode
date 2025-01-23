@@ -18,6 +18,7 @@ class Solution
         Queue<Point> q=new LinkedList<>();
         int res=Integer.MAX_VALUE;
         q.add(new Point(src,0));
+        dis[src]=0;
         k+=1;
         while(!q.isEmpty() && k>0)
         {
