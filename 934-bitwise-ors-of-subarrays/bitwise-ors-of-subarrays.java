@@ -8,9 +8,7 @@ class Solution
         int n= arr.length;
         HashSet<Integer> prev=new HashSet<>();
         HashSet<Integer> res=new HashSet<>();
-        prev.add(arr[0]);
-        res.add(arr[0]);
-        for(int i=1;i<n;i++)
+        for(int i=0;i<n;i++)
         {
             HashSet<Integer> curr=new HashSet<>();
             curr.add(arr[i]);
