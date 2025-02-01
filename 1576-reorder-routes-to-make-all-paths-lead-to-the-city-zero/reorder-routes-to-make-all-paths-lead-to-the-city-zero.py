@@ -4,11 +4,12 @@ class Solution:
         for x,y in connections:
             g[x].append((y,0))
             g[y].append((x,1))
-        d= {}
-        def dfs(dep,start,par,ans):
+        ans = 0
+        def dfs(start,par):
+            nonlocal ans
             for des,wt in g[start]:
                 if des!=par:
-                    d[des]=dep-(ans+wt)
-                    dfs(dep+1,des,start,dep)
-        dfs(1,0,-1,0)
-        return sum(d.values())
+                    ans+=(1-wt)
+                    dfs(des,start)
+        dfs(0,-1)
+        return ans
