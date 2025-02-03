@@ -15,7 +15,7 @@ class Solution:
                     t.append(dfs(x,node))
             s = sum(t)+1
             t.append(n-s)
-            print(node,t)
+            # print(node,t)
             r = 1
             for x in t:
                 r *= max(1,x)
