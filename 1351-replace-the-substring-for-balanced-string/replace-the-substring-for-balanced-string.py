@@ -23,7 +23,7 @@ class Solution:
         while r<n:
             d[s[r]]-=1
             while issafe() and l<=r:
-                print(d,l,r)
+                # print(d,l,r)
                 res = min(res,r-l+1)
                 d[s[l]]+=1
                 l+=1
