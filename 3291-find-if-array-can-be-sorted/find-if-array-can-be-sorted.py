@@ -1,17 +1,20 @@
 class Solution:
     def canSortArray(self, nums: List[int]) -> bool:
         n = len(nums)
-        pre = [bin(x).count('1') for x in nums]
-        prefix = [0]*n
-        prefix[0]=pre[0]
-        for i in range(1,n):
-            prefix[i]=prefix[i-1]+pre[i]
-        # print(prefix)
-        res = [(val,idx) for idx,val in enumerate(nums)]
-        res.sort()
-        for i in range(n):
-            src = res[i][1]
-            des = i
-            if pre[src]*abs(des-src+1) != abs(prefix[des]-(prefix[src-1] if src>0 else 0)):
+        arr = [(val,idx) for idx,val in enumerate(nums)]
+        arr.sort()
+        # print(arr)
+        i = 0
+        while i<n:
+            t = i
+            bits = bin(nums[i]).count('1')
+            mini = maxi = arr[i][1]
+            while t+1<n and bin(nums[t+1]).count('1')==bits:
+                maxi =  max(maxi,arr[t+1][1])
+                mini = min(mini,arr[t+1][1])
+                t+=1
+            # print(i,t)
+            if mini!=i or maxi!=t:
                 return False
+            i=t+1
         return True
