@@ -14,13 +14,8 @@ class Solution:
         def calc(i):
             group = 0
             for x in d.values():
-                g = x // i # combination of target and target+1
-
                 l2 = x%(i+1)
                 g2 = x//(i+1)
-
-                # # if l2>g2 and l2!=i:
-                # #     g2= INF
                 if l2>0:
                     g2+=1
                 group+= g2
