@@ -19,11 +19,11 @@ class Solution:
                 l2 = x%(i+1)
                 g2 = x//(i+1)
 
-                # if l2>g2 and l2!=i:
-                #     g2= INF
+                # # if l2>g2 and l2!=i:
+                # #     g2= INF
                 if l2>0:
                     g2+=1
-                group+= min(g,g2)
+                group+= g2
             return group
         mini = min(d.values())
         best = INF
