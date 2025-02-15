@@ -17,7 +17,7 @@ class Solution:
             idx = -1
             for j in range(i+1):
                 val = dp[j][i]+(res[j-1] if j-1>=0 else 0)
-                if val<=res[i] and dp[j][i]!=INF:
+                if val<=res[i]:
                     res[i]=val
                     idx = j
             go[i]=idx
