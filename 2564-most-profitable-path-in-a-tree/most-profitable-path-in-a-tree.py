@@ -19,7 +19,6 @@ class Solution:
                 amount[x]=0
             if depth[x]==d:
                 amount[x]//=2
-                return
             if x in parent:
                 dfs2(parent[x],d+1)
         dfs2(bob,0)
