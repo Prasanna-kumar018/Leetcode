@@ -10,7 +10,7 @@ class Solution:
         if grid[0][1]>1 and grid[1][0]>1:
             return -1
         def push(val):
-            heapq.heappush(q,val)
+            heapq.heappush(q,val)    #  Using heap is the best (Always).....
         def pop():
             return heapq.heappop(q)
         push((0,0,0)) # time,x,y
