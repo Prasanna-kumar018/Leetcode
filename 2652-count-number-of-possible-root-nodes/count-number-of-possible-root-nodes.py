@@ -23,7 +23,6 @@ class Solution:
             return ans
         dfs(0,-1)
         def dfs2(node,par):
-
             for des in g[node]:
                 if des!=par:
                     v = 0
