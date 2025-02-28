@@ -21,11 +21,11 @@ class Solution:
             for des in g[node]:
                 if des!=par:
                     v = ans[node][0]
-                    if v==ans[des][0]+price[node]:
+                    if v == ans[des][0]+price[node]:
                         v = ans[node][1]
                     v+=price[des]
-                    res[des]= max(ans[des][0],v,prev+price[des])
-                    dfs2(des,node,max(prev+price[des],v))
+                    res[des]=max(v,ans[des][0],prev+price[des])
+                    dfs2(des,node,max(v,prev+price[des]))
         dfs2(0,-1,price[0])
         s = -INF
         for x,y in zip(res,price):
