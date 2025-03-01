@@ -11,7 +11,7 @@ class Solution:
             c = Counter(x)
             v = fact[len(x)]
             for y,z in c.items():
-                # v//=fact[z]
+                # v//=fact[z] This won't works 
                 v= (v*pow(fact[z],-1,MOD))
             res*=v
             res%=MOD
