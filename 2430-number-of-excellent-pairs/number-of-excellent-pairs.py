@@ -5,7 +5,7 @@ class Solution:
         count = [0]*(maxi)
         for x in nums:
             count[x.bit_count()]+=1
-        print(count)
+        # print(count)
         total = 0
         for i in range(maxi):
             for j in range(maxi):
