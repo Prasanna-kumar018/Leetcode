@@ -15,20 +15,22 @@ class Solution:
         #     total += recur(n-1,i,-1)
         # return total%MOD
 
-        dp = collections.defaultdict(lambda : collections.defaultdict(lambda : collections.defaultdict(int)))
+        dp = collections.defaultdict(lambda : collections.defaultdict(int))
         for prev in range(1,7):
             for bprev in [-1,1,2,3,4,5,6]:
-                dp[0][prev][bprev]=1
+                dp[prev][bprev]=1
         for o in range(1,n):
+            result = collections.defaultdict(lambda : collections.defaultdict(int))
             for prev in range(1,7):
                 for bprev in [-1,1,2,3,4,5,6]:
                     res = 0
                     for i in range(1,7):
                         if i!=prev and i!=bprev and math.gcd(prev,i)==1:
-                            res += dp[o-1][i][prev]
-                    dp[o][prev][bprev]=res
+                            res += dp[i][prev]
+                    result[prev][bprev]=res
+            dp = result
         
         total = 0
         for i in range(1,7):
-            total += dp[n-1][i][-1]
+            total += dp[i][-1]
         return total%MOD
