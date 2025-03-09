@@ -7,7 +7,7 @@ class Solution:
             if colors[(r)%n]==colors[(r-1)%n]:
                 falsy+=1
             r+=1
-        print(falsy)
+        # print(falsy)
         count  = 0
         m = 2*n
         while l<n:
