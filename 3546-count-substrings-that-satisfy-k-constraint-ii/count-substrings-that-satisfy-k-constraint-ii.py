@@ -23,9 +23,6 @@ class Solution:
             prefix[i]=prefix[i-1]+(arr[i]-i)
         def get(x,y):
             return prefix[y]-(prefix[x-1] if x-1>=0 else 0)
-        print(arr)
-        def find(x,y):
-            return (y*(y+1)//2) - ((x-1)*(x)//2)
         res = []
         for x,y in queries:
             l,r = x,y
