@@ -4,6 +4,23 @@ class Solution:
         arr.sort(key=lambda x: x[0])
         n = len(nums)
         # print(arr)
+        """
+        x y z a b
+        z as the mid
+
+        left 
+
+        (z-x)*cost[x]+(z-y)*(cost[y])
+        z*(cost[x]+cost[y]) - (x*cost[x]+y*cost[y])
+        z * prefix[i-1] - (prefixcv[i-1])
+
+        right 
+        (a-z)*(cost[a]) + (b-z)*cost[b]
+
+        (a*cost[a]+b*cost[b]) - (z * (cost[a]+cost[b]))
+        suffixcv[i+1] - (z*(suffixc[i+1]))
+        
+        """
         prefixcv = [0]*n
         prefixcv[0]=arr[0][0]*arr[0][1]
         for i in range(1,n):
