@@ -3,7 +3,7 @@ class Solution:
         arr = [(x,y) for x,y in zip(nums,cc)]
         arr.sort(key=lambda x: x[0])
         n = len(nums)
-        print(arr)
+        # print(arr)
         prefixcv = [0]*n
         prefixcv[0]=arr[0][0]*arr[0][1]
         for i in range(1,n):
