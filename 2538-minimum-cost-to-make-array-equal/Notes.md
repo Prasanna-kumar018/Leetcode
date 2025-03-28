@@ -1,0 +1,1 @@
+<h2>minimum-cost-to-make-array-equal Notes</h2><hr>[ Time taken: 16 m 1 s ]
