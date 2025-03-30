@@ -29,7 +29,7 @@ class Solution:
                         val=0
                         if i>=2:
                             val = dis[des][i-2]
-                        dis[des][i]=(dis[des][i]+dis[node][i-1]-val)
+                        dis[des][i]+=(dis[node][i-1]-val)
                     go1(des,node)
         go1(0,-1)
         def go2(node,par,val):
