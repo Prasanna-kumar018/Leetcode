@@ -6,7 +6,7 @@ class Solution:
         total = 2* sum() + outlier
         """
         res = -10**20
-        for x in count.keys(): # 1000 * 1000
+        for x in count.keys(): # 1000
             out = total - 2*x
             count[x]-=1
             if count[out]>=1:
