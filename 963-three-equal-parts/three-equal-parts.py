@@ -26,5 +26,4 @@ class Solution:
                 return [-1,-1]
             if i==length-1: 
                 ans= [x[1],y[1]+1]
-                break
         return ans
