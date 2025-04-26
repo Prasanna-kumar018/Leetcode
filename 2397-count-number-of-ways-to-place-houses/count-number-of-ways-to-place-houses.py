@@ -9,10 +9,17 @@ class Solution:
             for x in [True,False]:
                 for y in [True,False]:
                     if x or y:
-                        if x and not prev1 and y and not prev2:
-                            res+=recur(x,y,n-1)
+                        if x and y:
+                            if x and not prev1 and y and not prev2:
+                                res+=recur(x,y,n-1)
+                        elif x:
+                            if x and not prev1:
+                                res+=recur(x,y,n-1)
+                        else:
+                            if y and not prev2:
+                                res+=recur(x,y,n-1)
                     else:
                         res += recur(x,y,n-1)
             return res
         x =recur(False,False,n)
-        return (x*x)%MOD
+        return x%MOD
