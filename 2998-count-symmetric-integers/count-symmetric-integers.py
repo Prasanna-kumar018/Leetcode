@@ -20,7 +20,6 @@ class Solution:
             t = 0
             for i in range(1,10):
                 t += help(v-1,i)
-            # help.cache_clear()
             return t
 
         def get(n,ee):
@@ -44,7 +43,6 @@ class Solution:
                         res += help2(idx+1,s+val,f)
                 return res
             x = help2(0,0,False)
-            # help2.cache_clear()
             return x
         def f(val):
             val = str(val)
