@@ -44,7 +44,7 @@ class Solution:
                         res += help2(idx+1,s+val,f)
                 return res
             x = help2(0,0,False)
-            help2.cache_clear()
+            # help2.cache_clear()
             return x
         def f(val):
             val = str(val)
