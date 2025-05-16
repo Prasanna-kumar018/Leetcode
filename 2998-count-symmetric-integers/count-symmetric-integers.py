@@ -20,7 +20,7 @@ class Solution:
             t = 0
             for i in range(1,10):
                 t += help(v-1,i)
-            help.cache_clear()
+            # help.cache_clear()
             return t
 
         def get(n,ee):
