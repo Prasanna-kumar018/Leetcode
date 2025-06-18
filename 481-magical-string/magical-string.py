@@ -1,8 +1,8 @@
 class Solution:
     def magicalString(self, n: int) -> int:
         """
-        1 2 2 1 1 2 1 2 2 1 2 2 1 1 2 1 1 2 2
-        1 2 2 1 1 2 1 2 2 1 2 2
+        "1 2 2 1 1 2 1 2 2 1 2 2" 1 1 2 1 1 2 2
+        "1 2 2 1 1 2 1 2 2 1 2 2"
         """
         current_digit = 2
         q = collections.deque([2])
