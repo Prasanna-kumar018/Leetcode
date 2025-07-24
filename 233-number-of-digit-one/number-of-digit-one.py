@@ -1,7 +1,7 @@
 class Solution:
     def countDigitOne(self, n: int) -> int:
         n = str(n)
-        xx = len(n)
+        xx = len( n)
         @cache
         def help(val):
             if val==0:
