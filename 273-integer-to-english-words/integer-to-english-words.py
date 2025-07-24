@@ -31,7 +31,7 @@ class Solution:
             80:"Eighty",
             90:"Ninety"
         }
-        digits = [(1000000000,"Billion"),(1000000,"Million"),(1000,"Thousand"),(100,"Hundred")]
+        digits = [(1000000000,"Billion"),(1000000,"Million"),(1000,"Thousand")]
         def convert(val):
             l = []
             if val>=100:
