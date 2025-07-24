@@ -3,6 +3,7 @@ class Solution:
         m = len(matrix)
         n = len(matrix[0])
         dir = [(-1,0),(1,0),(0,1),(0,-1)]
+        # 200*200*4*4
         @cache
         def go(x,y,parx,pary):
             res = 0
