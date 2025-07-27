@@ -26,10 +26,7 @@ class Solution:
             mini[y]=min(mini[y],mini[x])
 
 
-        g = collections.defaultdict(list)
         for x,y in connections:
-            g[x].append(y)
-            g[y].append(x)
             union(x,y)
         # print()
         res = []
