@@ -27,7 +27,7 @@ class Solution:
                 dp[n][2][k]=0
         
         for idx in range(n-1,-1,-1):
-            for canbuy in range(2,-1,-1):
+            for canbuy in range(3):
                 for k in range(kk+1):
                     res = dp[idx+1][canbuy][k]
                     if canbuy == 0 and k>0:
