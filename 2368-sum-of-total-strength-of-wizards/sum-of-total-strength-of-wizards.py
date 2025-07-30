@@ -53,12 +53,10 @@ class Solution:
                 return 0
             return suffix[l]-(suffix[r+1] if r+1<n else 0)
         res = 0 
-        print(psee,nse)
         for idx,val in enumerate(strength):
             left = idx-psee[idx]
             right = nse[idx]-idx
             ri = get(idx,nse[idx]-1) - (right*getp(0,idx-1))
-            # for 0 length if we calculate the left prefix sum -> that is no need = negative values = so we take max(0,....)
             le = g(psee[idx]+1,idx-1) - ((left-1)*gs(idx,n-1))
             rr = ri*left
             ll = le*right
