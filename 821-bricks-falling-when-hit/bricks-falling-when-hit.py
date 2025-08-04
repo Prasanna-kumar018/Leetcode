@@ -56,7 +56,7 @@ class Solution:
             for dx,dy in dir:
                 nx ,ny = x+dx, y+dy
                 if 0<= nx < m and 0<= ny <n and g[nx][ny]==1:
-                    if(  find((x,y)) ==find((nx,ny))):
+                    if(  find((x,y)) ==find((nx,ny))): # instead of seen set we are using this technique
                         continue
                     if find('roof')!=find((nx,ny)): # used to check whether they are connect to the roof
                         count += size[find((nx,ny))]
@@ -74,4 +74,3 @@ class Solution:
             g[x][y]=1
         res.reverse()
         return res
-        
