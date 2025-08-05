@@ -30,23 +30,8 @@ class Solution:
         power = [1]*(n+1)
         for i in range(1,n+1):
             power[i] = (power[i-1]*2)%mod 
-        i = 1
-        res = 0 
-        first = {}
-        while i<n:
-            res += (nums[i]*power[i-1])
-            i+=1
-        first[0]=res
-        inv = pow(2,-1,mod)
-        i = 1
-        while i<n:
-            res-= nums[i]
-            # res //= 2  ==> res = (res * (2^-1)) % mod
-            res = ( res * inv) % mod  # after applying the inverse moding it 
-            # is very important otherwise memory limit exceeded will occur
-            first[i]=res
-            i+=1
         ans = 0
-        for i in range(n-1):
-            ans += (first[i]-(nums[i]*(power[n-1-i]-1)))
+        for i in range(n):
+            ans += (nums[i]*power[i])
+            ans -= (nums[i]*power[n-1-i])
         return ans%mod
