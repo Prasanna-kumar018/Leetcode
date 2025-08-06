@@ -14,6 +14,7 @@ class Solution:
             while r+1 <n:
                 r+=1
                 asc= ord(s[l])
+                # Use array to calculate power based on the mod value otherwise too long number will be created
                 value = (((value-(power[len_-1]*asc)%mod)*26)%mod+ (ord(s[r])))%mod
                 l+=1
                 if value in d:
