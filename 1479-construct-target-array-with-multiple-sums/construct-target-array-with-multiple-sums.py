@@ -23,6 +23,4 @@ class Solution:
             total -= largest
             total += nex
             heapq.heappush(q,-nex)
-            # print(q,nex,rem,total)
-
-        return True
+        return False
