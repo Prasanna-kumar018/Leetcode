@@ -1,11 +1,5 @@
 class Solution:
-    def largestPerimeter(self, nums: List[int]) -> int:
-        q = []
-        def push(val):
-            heapq.heappush(q, val)
-        def pop():
-            return heapq.heappop(q)
-        
+    def largestPerimeter(self, nums: List[int]) -> int:    
         nums.sort()
         total = 0
         ans = -1
