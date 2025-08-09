@@ -1,10 +1,32 @@
 class Solution:
     def minimumCost(self, nums: List[int]) -> int:
         N = len(nums)
+        """
+        123456
+
+        122221 (nearest palindrome before x)
+        123321  x
+        124421 (nearest palindrome after x)
+
+
+        12345
+
+        12221 (nearest palindrome before x)
+        12321 x
+        12421 (nearest palindrome after x)
+
+        Edge case
+
+        median -> 1000
+        then   -> 9 10 11
+        digit length is reduced in case of 9 
+        thats why we are running the loop of all length for digit 9 at last
+        """
         # find median
         nums.sort()
         INF = 10**20
         def get(x):
+            print (x)
             total = 0
             for y in nums:
                 total += abs(x-y)
@@ -31,5 +53,5 @@ class Solution:
         for median in [nums[N//2],nums[(N-1)//2]]:
             res = min(res,go(median))
         for L in range(1,10):
-            res = min(res,get(int(str('9')*L)))
+            res = min(res,go(int(str('9')*L)))
         return res
