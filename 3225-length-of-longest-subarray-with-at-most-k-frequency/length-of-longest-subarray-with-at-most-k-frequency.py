@@ -8,7 +8,8 @@ class Solution:
             d[nums[r]]+=1
 
             # while max(d.values())>k: ---> TLE
-            while d[nums[r]]>k:
+            # before d[nums[r]]+=1 everything is perfect so we have to decrement of count of that alone , which is our aim
+            while d[nums[r]]>k: 
                 d[nums[l]]-=1
                 if d[nums[l]]==0:
                     del d[nums[l]]
