@@ -9,7 +9,7 @@ class Solution:
 
         bisect.bisect_right()
         1 1 2 2 
-        1 1 second one won't replaces the first one (>= greater than or equal to )
+        1 1 second one won't replaces the first one (> greater than )
         """
         for x in nums:
             ind = bisect.bisect_right(l,x)
