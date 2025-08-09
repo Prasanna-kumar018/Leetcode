@@ -4,12 +4,12 @@ class Solution:
         """
         bisect.bisect_left()
         1 1 2 2 
-        1 second replaces the first one (>= greater than or equal to )
+        1 second one replaces the first one (>= greater than or equal to )
 
 
         bisect.bisect_right()
         1 1 2 2 
-        1 1 second won't replaces the first one (>= greater than or equal to )
+        1 1 second one won't replaces the first one (>= greater than or equal to )
         """
         for x in nums:
             ind = bisect.bisect_right(l,x)
