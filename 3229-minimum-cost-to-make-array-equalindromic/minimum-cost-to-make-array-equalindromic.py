@@ -31,7 +31,5 @@ class Solution:
         for median in [nums[N//2],nums[(N-1)//2]]:
             res = min(res,go(median))
         for L in range(1,10):
-            # res = min(res,get(int(str('1')*L)))
             res = min(res,get(int(str('9')*L)))
-        
         return res
