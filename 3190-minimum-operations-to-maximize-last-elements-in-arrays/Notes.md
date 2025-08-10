@@ -1,0 +1,1 @@
+<h2>minimum-operations-to-maximize-last-elements-in-arrays Notes</h2><hr>[ Time taken: 19 s ]
