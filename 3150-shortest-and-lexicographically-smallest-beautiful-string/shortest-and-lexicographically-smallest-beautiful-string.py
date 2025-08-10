@@ -17,7 +17,7 @@ class Solution:
             while q and q[0]=='0':
                 q.popleft()
             if ones==k:
-                ss = ''.join(list(q))
+                ss = ''.join(q)
                 # print(ss)
                 if not ans:
                     ans = ss
