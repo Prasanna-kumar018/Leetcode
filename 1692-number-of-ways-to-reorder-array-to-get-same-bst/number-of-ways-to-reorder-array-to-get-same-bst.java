@@ -16,6 +16,9 @@ class Solution {
             }
             int left = l.size();
             int right =r.size();
+            /**
+                nCr = nCn-r
+             */
             // return (ncr[left+right][left]*(recur(l)*(recur(r))%mod))%mod;
             return (ncr[left+right][right]*(recur(l)*(recur(r))%mod))%mod;
     }
