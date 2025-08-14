@@ -6,8 +6,8 @@ class Solution:
 
         for i in range(1,m+1):
             for j in range(1,n+1):
-                for k in range(1,i):
+                for k in range(1,i+1):
                     dp[i][j]=max(dp[i][j],dp[i-k][j]+dp[k][j])
-                for k in range(1,j):
+                for k in range(1,j+1):
                     dp[i][j]=max(dp[i][j],dp[i][j-k]+dp[i][k])
         return dp[m][n]
