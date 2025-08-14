@@ -55,11 +55,8 @@ class Solution:
             s.add(mask)
 
         d = collections.defaultdict(int)
-        ss = 0
         for x in words:
             mask = get(x)
             d[find(mask)]+=1
-            ss = max(ss,size[find(mask)])
-        print
         # return [len(d),ss] # won't work because the parent contains only the unique words but the same word may occur for multiple times
         return [len(d),max(d.values())]
