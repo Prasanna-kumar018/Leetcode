@@ -2,6 +2,7 @@ class Solution:
     def countPaths(self, grid: List[List[int]]) -> int:
         dir = [(-1,0),(1,0),(0,1),(0,-1)]
         MOD = 10**9+7
+        # 4*m*n time
         @cache
         def dfs(prev,x,y):
             if x<0 or y<0 or x>=m or y>=n or grid[x][y]<=prev:
