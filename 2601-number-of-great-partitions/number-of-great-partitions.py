@@ -19,7 +19,7 @@ class Solution:
             if left+nums[idx]>=k:
                 total += recur(idx+1,min(k,right))
             else:
-                total += recur(idx+1,min(k,left+nums[idx]))
+                total += recur(idx+1,left+nums[idx])
             # right     
             # if right+nums[idx]>=k:
             #     total+= recur(idx+1,left)
