@@ -40,7 +40,7 @@ class Solution:
         """
         a2+b2+c2 = (a+1)2 + (b+1)2 + c2 = > a2 + b2+ c2 + 2a + 1 + 2b + 1
         a2 + b2+ c2 + 2*(a+b) + (1 + 1)
-                      L * s   + L 
+                      2 * s   + L 
                       s is the sum of a and b
         """
         last = collections.defaultdict(lambda : -1)
