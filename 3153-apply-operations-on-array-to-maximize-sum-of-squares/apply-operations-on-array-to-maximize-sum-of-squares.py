@@ -2,6 +2,23 @@ class Solution:
     def maxSum(self, nums: List[int], k: int) -> int:
         """
         a + b = (a & b) + (a | b)
+        i j  ni nj
+        0 0  0  0
+        0 1  0  1
+        1 0  0  1  # what it means is we can pull the 1 
+        1 1  1  1
+
+
+        10110101
+        10101010
+        01010111
+
+        so it becomes
+        11111111
+        10110111
+        00000000
+
+        move all the ones of the corresponding bit to the top
         """
         MOD = 10**9 + 7
         n = len(nums)
