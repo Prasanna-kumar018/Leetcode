@@ -40,7 +40,7 @@ class Solution:
             for i in range(1,10):
                 if i <= int(val[0]):
                     t += recur(1,i<int(val[0]),i)
-            recur.cache_clear()
+            # recur.cache_clear()
             return t 
 
         def get(val):
