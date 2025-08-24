@@ -7,7 +7,7 @@ class Solution:
             M = len(curr)
             w = ""
             for i in range(M-1,-1,-1):
-                if M-i>10:
+                if M-i>MAXI:
                     break
                 w = curr[i] + w
                 if w in f:
