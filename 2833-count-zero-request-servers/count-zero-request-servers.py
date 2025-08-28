@@ -5,8 +5,6 @@ class Solution:
             g[y].add(x)
         d = collections.defaultdict(int)
         qs = sorted(set(queries+[x for _,x in logs]))
-        # qs = sorted(set(queries+g.keys()))
-        # print(qs)
         q = {}
         have = 0
         MAXI = max(queries)+1
