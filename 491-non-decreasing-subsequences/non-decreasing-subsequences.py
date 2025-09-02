@@ -6,6 +6,7 @@ class Solution:
             nonlocal res
             vis = set()
             for idx in range(prev+1,n):
+                # Strategy to remove duplicates
                 if nums[idx] in vis:
                     continue
                 if nums[idx] >= nums[prev]:
@@ -17,6 +18,7 @@ class Solution:
                 res.append(list(l))
         vv = set()
         for i in range(n):
+            # Strategy to remove duplicates
             if nums[i] in vv:
                 continue
             recur(i,[nums[i]])
