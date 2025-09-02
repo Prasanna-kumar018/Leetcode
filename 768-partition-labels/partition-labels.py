@@ -13,5 +13,4 @@ class Solution:
                 curr = max(curr,last[s[i]])
                 i+=1
             res.append(curr-start+1)
-            i = max(start+1,i)
         return res
