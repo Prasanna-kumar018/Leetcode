@@ -1,13 +1,11 @@
 class Solution:
     def numRabbits(self, answers: List[int]) -> int:
-        s = Counter(answers)
-        """
-        5 5 5 5 5 5 | 5 5 5 5 5 5 
-
-        """
-        res = 0
-        for key,count in s.items():
-            v= count // (key+1)
-            v += (1 if count%(key+1)!=0 else 0)
-            res += (v*(key+1))
+        n = len(answers)
+        res = n
+        for x,y in Counter(answers).items():
+            v = (x+1)
+            c = y % v
+            if c>0:
+                c = (v -c)
+            res += c
         return res
