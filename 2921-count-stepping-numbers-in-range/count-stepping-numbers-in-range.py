@@ -1,53 +1,20 @@
 class Solution:
     def countSteppingNumbers(self, low: str, high: str) -> int:
         MOD = 10**9 + 7
-        low = int(low)
-        low -=1
-        low = str(low)
-        @cache
-        def go(vv,prev):
-            if vv==0:
-                return 1
-            r = 0
-            for i in range(10):
-                if abs(prev-i)==1:
-                    r += go(vv-1,i)
-            return r
-        @cache
-        def help(v):
-            res = 0
-            for i in range(1,10):
-                res += go(v-1,i)
-            return res 
-        
-        
-
-        def getLast(val):
+        def get(val):
             N = len(val)
             @cache
             def recur(idx,isless,prev):
                 if idx==N:
                     return 1
                 c = 0
-                for i in range(10):
-                    if abs(i-prev)==1:
-                        if isless:
-                            c += recur(idx+1,isless,i)
-                        elif i<=int(val[idx]):
-                            c += recur(idx+1,i<int(val[idx]),i)
+                x = int(val[idx])
+                end = 10 if isless else x+1 
+                for i in range(end):
+                    if prev==-1 or abs(i-prev)==1 :
+                        v = bool(i<x)
+                        c += recur(idx+1,v or isless,-1 if i==0 and prev==-1 else i)
                 return c 
-            t = 0
-            for i in range(1,10):
-                if i <= int(val[0]):
-                    t += recur(1,i<int(val[0]),i)
-            # recur.cache_clear()
+            t = recur(0,False,-1)
             return t 
-
-        def get(val):
-            n = len(val)
-            total = 0
-            for x in range(1,n):
-                total += help(x)
-            total += getLast(val)
-            return total 
-        return (get(high)-get(low))% MOD
+        return (get(high)-get(str(int(low)-1)))% MOD
