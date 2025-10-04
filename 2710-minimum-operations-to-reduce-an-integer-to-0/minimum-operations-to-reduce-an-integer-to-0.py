@@ -3,6 +3,9 @@ class Solution:
         """
         2^3 - 1 = 2^2 + 2^1 + 2^0
         8   - 1 = (4 + 2 + 1) 
+
+        add 1 and remove 8
+        
         """
         res = 0
         while n>0:
