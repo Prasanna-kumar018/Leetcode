@@ -1,40 +1,30 @@
 class Solution:
     def avoidFlood(self, rain: List[int]) -> List[int]:
         n = len(rain)
-        uf = UnionFind(n + 1)
-        map_lake = {}
-        res = [1] * n
+        ans = [1]*n
+        par = {}
+        def find(x):
+            if x not in par:
+                par[x]=x
+            if x!=par[x]:
+                par[x]=find(par[x])
+            return par[x]
+        
+        def union(x):
+            par[x]=find(x+1)
 
-        for i, lake in enumerate(rain):
-            if lake != 0:
-                res[i] = -1
-                
-                if lake in map_lake:
-                    prev = map_lake[lake]
-                    dry = uf.find(prev)
-                    
-                    if dry >= i:
+        d = {}
+        for idx,val in enumerate(rain):
+            if val!=0:
+                union(idx)
+                ans[idx]=-1
+                if val in d:
+                    prev = d[val]
+                    ind = find(prev)
+                    if ind>=idx:
                         return []
+                    ans[ind]=val
+                    union(ind)
 
-                    res[dry] = lake
-                    uf.unite(dry)
-                    map_lake[lake] = i
-                else:
-                    map_lake[lake] = i
-                uf.unite(i)
-
-        return res
-
-
-class UnionFind:
-    def __init__(self, size: int):
-        self.parent = list(range(size + 1))
-
-    def find(self, i: int) -> int:
-        if self.parent[i] == i:
-            return i
-        self.parent[i] = self.find(self.parent[i])
-        return self.parent[i]
-
-    def unite(self, i: int):
-        self.parent[i] = self.find(i + 1)
+                d[val]=idx
+        return ans
