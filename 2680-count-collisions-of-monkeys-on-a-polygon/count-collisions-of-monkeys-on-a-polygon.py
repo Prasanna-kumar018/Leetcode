@@ -1,7 +1,6 @@
 class Solution:
     def monkeyMove(self, n: int) -> int:
         MOD = 10**9 + 7
-        @cache
         def p(left):
             if left==0:
                 return 1
