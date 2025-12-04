@@ -35,7 +35,8 @@ class Solution:
         n = len(nums)
         res = v = 0
         for i in range(n):
-            v ^= (nums[i]|nums[i])
+            # v ^= (nums[i]|nums[i])
+            v ^= nums[i]
         for j in range(n):
             res ^= (v & nums[j])
         return res
