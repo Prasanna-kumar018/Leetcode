@@ -9,11 +9,11 @@ class Solution:
         for x,y in edges:
             if vals[y]>0:
                 push(g[x],vals[y])
-            while len(g[x])>k:
+            if len(g[x])>k:
                 pop(g[x])
             if vals[x]>0:
                 push(g[y],vals[x])
-            while len(g[y])>k:
+            if len(g[y])>k:
                 pop(g[y])
 
         c = max(vals) # for 0 edges i.e one node
