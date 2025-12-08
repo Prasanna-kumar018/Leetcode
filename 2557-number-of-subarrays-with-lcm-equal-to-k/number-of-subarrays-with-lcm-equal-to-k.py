@@ -4,13 +4,9 @@ class Solution:
         n = len(nums)
         ans = 0
         for i in range(n):
-            res = None
+            res = 1
             for j in range(i,n):
-                if not res:
-                    res = nums[j]
-                else:
-                    res = math.lcm(res,nums[j])
-
+                res = math.lcm(res,nums[j])
                 if res==k:
                     ans += 1
             
